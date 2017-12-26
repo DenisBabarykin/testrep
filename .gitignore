@@ -41,6 +41,22 @@
 *.su
 *.idb
 *.pdb
+*.debug
+*.Debug
+*.Release
+
+# QtCreator
+*~
+*.autosave
+*.moc
+Thumbs.db
+
+# Valgrind
+callgrind.*
+
+# Python byte code
+*.pyc
 
 # Build
 server
+UnitTests

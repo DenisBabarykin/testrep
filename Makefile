@@ -1,4 +1,5 @@
 SERVER_PATH := src
+UNIT_TESTS_PATH := tests/UnitTests
 
 all: server tests report
 
@@ -8,7 +9,7 @@ server:
 tests: unit_tests system_tests
 
 unit_tests: 
-	echo 'run unit tests'
+	make -C $(UNIT_TESTS_PATH)
 
 system_tests: 
 	echo 'run system tests'
@@ -16,5 +17,6 @@ system_tests:
 
 clean:
 	make -C $(SERVER_PATH) clean
+	make -C $(UNIT_TESTS_PATH) clean
 	
 .PHONY: all server tests unit_tests system_tests
