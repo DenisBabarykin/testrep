@@ -57,6 +57,6 @@ callgrind.*
 # Python byte code
 *.pyc
 
-# Build
-server
-UnitTests
+# Build executables
+src/server
+tests/UnitTests/UnitTests

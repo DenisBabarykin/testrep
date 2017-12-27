@@ -10,6 +10,6 @@ server: $(OBJ)
 	gcc -o $@ $^ $(CFLAGS)
 
 clean:
-	-rm server $(OBJ)
+	rm server $(OBJ)
 		
 .PHONY: clean
