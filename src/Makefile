@@ -1,9 +1,8 @@
 CC = gcc
-CFLAGS = -I. -Wall -Werror -g
-DEPS = hello.h
-OBJ = main.o hello.o 
+CFLAGS = -I. -Wall -Werror -g3
+OBJ = main.o memory_manager.o
 
-%.o: %.c $(DEPS)
+%.o: %.c *.h
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 server: $(OBJ)

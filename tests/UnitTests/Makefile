@@ -1,10 +1,9 @@
 CC = gcc
-CFLAGS = -I. -Wall -Werror -g
-DEPS = hello_test.h
+CFLAGS = -I. -Wall -Werror -g3
 OBJ = main.o hello_test.o
 SRC_OBJ = hello.o
 
-%.o: %.c $(DEPS)
+%.o: %.c %.h
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 UnitTests: make_sources $(OBJ)

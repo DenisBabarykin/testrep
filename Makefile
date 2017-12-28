@@ -12,7 +12,10 @@ unit_tests:
 	make -C $(UNIT_TESTS_PATH)
 
 system_tests: 
-	echo 'run system tests'
+	echo 'run system tests, coming soon'
+
+report:
+	echo 'coming soon'
 
 
 clean:

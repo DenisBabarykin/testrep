@@ -6,7 +6,7 @@
 int main(void)
 {
     int a = 5;
-    SayHello();
+    //SayHello();
     for (int i = 0; i < 30000; i++)
     {
         int *p = malloc(3000);

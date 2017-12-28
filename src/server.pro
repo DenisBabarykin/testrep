@@ -4,8 +4,10 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += main.c \
-    hello.c
+    hello.c \
+    memory_manager.c
 
 HEADERS += \
-    hello.h
+    hello.h \
+    memory_manager.h
 
