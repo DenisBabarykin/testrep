@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <hello_test.h>
+#include <memory_manager_test.h>
 #include <CUnit/Basic.h>
 
 int init_suite(void) { return 0; }
@@ -7,19 +7,23 @@ int clean_suite(void) { return 0; }
 
 int main(void)
 {
-    CU_pSuite pSuite = NULL;
+    CU_pSuite mem_manager_suite = NULL;
 
     if (CUE_SUCCESS != CU_initialize_registry())
         return CU_get_error();
 
-    pSuite = CU_add_suite("First_test_suite", init_suite, clean_suite);
-    if (!pSuite)
+    mem_manager_suite = CU_add_suite("Memory manager test suite", init_suite, clean_suite);
+    if (!mem_manager_suite)
     {
         CU_cleanup_registry();
         return CU_get_error();
     }
 
-    if (!CU_add_test(pSuite, "test_1_true", test_true) || !CU_add_test(pSuite, "test_2_false", test_false))
+    if (!CU_add_test(mem_manager_suite, "allocation_test", allocation_test) ||
+            !CU_add_test(mem_manager_suite, "free_generation_usual_test", free_generation_usual_test) ||
+            !CU_add_test(mem_manager_suite, "free_generation_zero_test", free_generation_zero_test) ||
+            !CU_add_test(mem_manager_suite, "free_all_generations_usual_test", free_all_generations_usual_test) ||
+            !CU_add_test(mem_manager_suite, "free_all_generations_zero_test", free_all_generations_zero_test))
     {
         CU_cleanup_registry();
         return CU_get_error();

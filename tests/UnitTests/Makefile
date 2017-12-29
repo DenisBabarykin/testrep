@@ -1,7 +1,7 @@
 CC = gcc
-CFLAGS = -I. -Wall -Werror -g3
-OBJ = main.o hello_test.o
-SRC_OBJ = hello.o
+CFLAGS = -I. -g3
+OBJ = main.o memory_manager_test.o
+SRC_OBJ = memory_manager.o
 
 %.o: %.c %.h
 	$(CC) -c -o $@ $< $(CFLAGS)
